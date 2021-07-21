@@ -5,7 +5,7 @@ module.exports = {
 
   development: {
     client: "pg",
-    connection: process.env.DB_CONNECTION_STRING || 'postgres://postgres:docker@localhost:5432/toolbox_db',
+    connection: 'postgres://postgres:docker@localhost:5438/toolbox_database',
     migrations: {
       directory: __dirname + "/migrations",
     },
