@@ -10,6 +10,8 @@ var resources = require('./routes/resources');
 var templates = require('./routes/templates');
 var reading_list = require('./routes/reading-list');
 var testroute = require('./routes/test');
+var dev = require('./routes/dev');
+
 
 
 var app = express();
@@ -27,6 +29,8 @@ app.use('/resources', resources);
 app.use('/templates', templates);
 app.use('/readinglist', reading_list);
 app.use('/test', testroute);
+app.use('/dev', dev);
+
 
 
 

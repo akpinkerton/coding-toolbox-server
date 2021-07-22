@@ -5,7 +5,7 @@ const knex = require('knex')(require('../knexfile')['development']);
 router.get('/', function (req, res) {
   knex
     .select('*')
-    .from('test_inputs')
+    .from('dev')
     .then(data => res.status(200).json(data))
     .catch(err =>
       res.status(404).json({
@@ -17,7 +17,7 @@ router.get('/', function (req, res) {
 
 router.post('/', (req, res) => {
   console.log("New input: ", req.body)
-    knex('test_inputs')
+    knex('dev')
     .insert(req.body)
     .then(data => res.status(200).json(data))
     .catch(err => {
