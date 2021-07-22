@@ -15,4 +15,17 @@ router.get('/', function (req, res) {
     );
 })
 
+router.post('/', (req, res) => {
+  console.log("New input: ", req.body)
+    knex('reading_list')
+    .insert(req.body)
+    .then(data => res.status(200).json(data))
+    .catch(err => {
+      res.status(404).json({
+        message: `error`
+      })
+    })
+})
+
+
 module.exports = router;
