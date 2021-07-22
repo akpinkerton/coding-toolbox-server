@@ -39,12 +39,19 @@ exports.up = function(knex) {
     table.string('description').notNullable();
     table.string('tags').notNullable();
   })
+
+  .createTable('dev', table => {
+    table.increments('id');
+    table.text('type', 255).notNullable();
+  })
 };
 
 exports.down = function(knex) {
-  return knex.schema.dropTableIfExists('users')
+  return knex.schema
+  .dropTableIfExists('users')
   .dropTableIfExists('resources')
   .dropTableIfExists('templates')
   .dropTableIfExists('reading_list')
   .dropTableIfExists('test_inputs')
+  .dropTableIfExists('dev')
 };
