@@ -49,9 +49,5 @@ exports.down = function(knex) {
   .dropTableIfExists('resources')
   .dropTableIfExists('templates')
   .dropTableIfExists('reading_list')
-  .dropTableIfExists('test_inputs')
-  .dropTableIfExists('dev')
-  .dropTableIfExists('icons')
-
-
+  
 };
