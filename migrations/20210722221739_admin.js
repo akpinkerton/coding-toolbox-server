@@ -18,7 +18,7 @@ exports.up = function(knex) {
   .createTable('icons', table => {
     table.increments('id');
     table.text('tag', 255).notNullable();
-    table.string('url', 255).notNullable();
+    table.string('url').notNullable();
   })
 };
 

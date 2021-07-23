@@ -14,7 +14,7 @@ exports.seed = function(knex) {
           url: 'https://img.icons8.com/offices/40/000000/react.png'
         },
         { tag: 'Javascript',
-          url: 'https://icons8.com/icon/42769/javascript-logo'
+          url: 'https://img.icons8.com/color/48/000000/javascript--v1.png'
         },
         {
           tag: 'Bootstrap',
