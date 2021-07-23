@@ -3,18 +3,16 @@ var router = express.Router();
 
 /* GET home page. */
 router.get("/", (req, res) => {
-  // const links = [
-  //     {'https://coding-toolbox-server.herokuapp.com/'},
-  //     {'https://coding-toolbox-server.herokuapp.com/resources'},
-  //     {'https://coding-toolbox-server.herokuapp.com/templates'},
-  //     {'https://coding-toolbox-server.herokuapp.com/readinglist'},
-  //     {'https://coding-toolbox-server.herokuapp.com/test'},
-  //     {'https://coding-toolbox-server.herokuapp.com/dev'},
-  //     {'https://coding-toolbox-server.herokuapp.com/gym'},
-  //     {'https://coding-toolbox-server.herokuapp.com/icons'}
-  // ]
-
-  res.send({resources: 'https://coding-toolbox-server.herokuapp.com/resources'}, {templates: 'https://coding-toolbox-server.herokuapp.com/resources'});
+  res.send({
+    resources: 'https://coding-toolbox-server.herokuapp.com/resources',
+    templates: 'https://coding-toolbox-server.herokuapp.com/resources',
+    readinglist: 'https://coding-toolbox-server.herokuapp.com/readinglist',
+    test: 'https://coding-toolbox-server.herokuapp.com/test',
+    dev: 'https://coding-toolbox-server.herokuapp.com/dev',
+    gym: 'https://coding-toolbox-server.herokuapp.com/gym',
+    icons: 'https://coding-toolbox-server.herokuapp.com/icons',
+    CLIENT: 'https://coding-toolbox.herokuapp.com'
+  });
 })
 
 module.exports = router;
