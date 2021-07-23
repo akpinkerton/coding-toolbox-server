@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
   //     {'https://coding-toolbox-server.herokuapp.com/icons'}
   // ]
 
-  res.send({link: 'https://coding-toolbox-server.herokuapp.com/resources'});
+  res.send({resources: 'https://coding-toolbox-server.herokuapp.com/resources'}, {templates: 'https://coding-toolbox-server.herokuapp.com/resources'});
 })
 
 module.exports = router;
