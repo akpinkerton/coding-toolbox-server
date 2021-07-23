@@ -5,7 +5,7 @@ var router = express.Router();
 router.get("/", (req, res) => {
   res.send({
     resources: 'https://coding-toolbox-server.herokuapp.com/resources',
-    templates: 'https://coding-toolbox-server.herokuapp.com/resources',
+    templates: 'https://coding-toolbox-server.herokuapp.com/templates',
     readinglist: 'https://coding-toolbox-server.herokuapp.com/readinglist',
     test: 'https://coding-toolbox-server.herokuapp.com/test',
     dev: 'https://coding-toolbox-server.herokuapp.com/dev',

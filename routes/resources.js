@@ -27,4 +27,13 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete('/', (req, res) => {
+  const id = req.body.id
+  console.log(id)
+  knex('resources')
+    .where('id', id)
+    .del()
+    .then(res.end())
+})
+
 module.exports = router;
