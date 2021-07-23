@@ -11,6 +11,9 @@ var templates = require('./routes/templates');
 var reading_list = require('./routes/reading-list');
 var testroute = require('./routes/test');
 var dev = require('./routes/dev');
+var icons = require('./routes/icons');
+var gym = require('./routes/gym');
+
 
 
 
@@ -30,7 +33,8 @@ app.use('/templates', templates);
 app.use('/readinglist', reading_list);
 app.use('/test', testroute);
 app.use('/dev', dev);
-
+app.use('/gym', gym);
+app.use('/icons', icons);
 
 
 

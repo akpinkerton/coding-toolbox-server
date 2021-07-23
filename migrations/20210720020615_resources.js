@@ -1,6 +1,7 @@
 
 exports.up = function(knex) {
-  return knex.schema.createTable('resources', table => {
+  return knex.schema
+  .createTable('resources', table => {
     table.increments('id');
     table.text('type', 255).notNullable().defaultTo('resource')
     table.string('title', 255).notNullable();
@@ -30,28 +31,22 @@ exports.up = function(knex) {
     table.timestamp('created').defaultTo(knex.fn.now())
     table.timestamp('updated').defaultTo(knex.fn.now())
   })
-
-  .createTable('test_inputs', table => {
+  .createTable('gym', table => {
     table.increments('id');
-    table.text('type', 255).notNullable();
-    table.string('title').notNullable();
+    table.text('type', 255).notNullable().defaultTo('resource')
+    table.string('title', 255).notNullable();
     table.string('url').notNullable();
-    table.string('description').notNullable();
+    table.text('description').notNullable();
     table.string('tags').notNullable();
-  })
-
-  .createTable('dev', table => {
-    table.increments('id');
-    table.text('type', 255).notNullable();
+    table.timestamp('created').defaultTo(knex.fn.now())
+    table.timestamp('updated').defaultTo(knex.fn.now())
   })
 };
 
 exports.down = function(knex) {
   return knex.schema
-  .dropTableIfExists('users')
+  .dropTableIfExists('gym')
   .dropTableIfExists('resources')
   .dropTableIfExists('templates')
   .dropTableIfExists('reading_list')
-  .dropTableIfExists('test_inputs')
-  .dropTableIfExists('dev')
 };

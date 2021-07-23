@@ -89,6 +89,18 @@ exports.seed = function(knex) {
           url: 'https://stackoverflow.com/questions/50058408/create-react-app-does-not-use-build-for-production-on-heroku',
           description: 'Development environment is deployed instead of production. Causes issues with HTTP requests. ',
           tags: 'Heroku, Errors'
+        },
+        {
+          title: 'Conditional Rendering in React',
+          url: 'https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_interactivity_filtering_conditional_rendering',
+          description: 'Simple tutorial of a basic todo app that explores conditional rendering',
+          tags: 'React'
+        },
+        {
+          title: 'CSS Gradient Backgrounds',
+          url: 'https://www.w3schools.com/css/css3_gradients.asp',
+          description: 'Cool background options using gradient colors to create dimension',
+          tags: 'Styling, CSS'
         }
       ])
     )});
