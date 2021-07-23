@@ -27,5 +27,14 @@ router.post('/', (req, res) => {
     })
 })
 
+router.delete('/', (req, res) => {
+  const id = req.body.id
+  console.log(id)
+  knex('reading_list')
+    .where('id', id)
+    .del()
+    .then(res.end())
+})
+
 
 module.exports = router;
