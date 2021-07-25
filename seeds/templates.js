@@ -5,9 +5,11 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return (
       knex('templates').insert([
-        { 
+        {
           title: 'This is an example template',
           content: '# Create a react app > npx create-react-app my-new-app # cd into folder and start the app on default localhost:2000 > npm start ',
+          file_name: 'test file name',
+          file: 'test file',
           tags: 'Knex, Servers, Testing, SQL'
         }
       ])

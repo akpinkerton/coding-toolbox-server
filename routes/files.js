@@ -5,7 +5,7 @@ const knex = require('knex')(require('../knexfile')[process.env.NODE_ENV || 'dev
 router.get('/', function (req, res) {
   knex
     .select('*')
-    .from('templates')
+    .from('files')
     .then(data => res.status(200).json(data))
     .catch(err =>
       res.status(404).json({
@@ -17,7 +17,7 @@ router.get('/', function (req, res) {
 
 router.post('/', (req, res) => {
   console.log("New input: ", req.body)
-    knex('templates')
+    knex('files')
     .insert(req.body)
     .then(data => res.status(200).json(data))
     .catch(err => {
@@ -25,14 +25,6 @@ router.post('/', (req, res) => {
         message: `error`
       })
     })
-})
-
-router.post("/", async (req, res) => {
-  const {name, data} = req.files.pic;
-  await knex('templates')
-  .insert({file_name: file_name, file: file });
-  res.sendStatus(200);
-
 })
 
 module.exports = router;

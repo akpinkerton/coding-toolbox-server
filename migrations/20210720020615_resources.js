@@ -16,6 +16,8 @@ exports.up = function(knex) {
     table.text('type', 255).notNullable().defaultTo('template')
     table.string('title', 255).notNullable();
     table.text('content').notNullable();
+    table.text('file_name').defaultTo('no file uploaded');
+    table.text('file').defaultTo('no file uploaded');
     table.text('tags').notNullable();
     table.timestamp('created').defaultTo(knex.fn.now())
     table.timestamp('updated').defaultTo(knex.fn.now())
@@ -41,6 +43,11 @@ exports.up = function(knex) {
     table.timestamp('created').defaultTo(knex.fn.now())
     table.timestamp('updated').defaultTo(knex.fn.now())
   })
+  .createTable('files', table => {
+    table.increments('id');
+    table.text('file_name').defaultTo('no file uploaded');
+    table.text('file').defaultTo('no file uploaded');
+  })
 };
 
 exports.down = function(knex) {
@@ -49,5 +56,6 @@ exports.down = function(knex) {
   .dropTableIfExists('resources')
   .dropTableIfExists('templates')
   .dropTableIfExists('reading_list')
-  
+  .dropTableIfExists('files')
+
 };
