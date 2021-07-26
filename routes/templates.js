@@ -32,7 +32,16 @@ router.post("/", async (req, res) => {
   await knex('templates')
   .insert({file_name: file_name, file: file });
   res.sendStatus(200);
+})
 
+
+router.delete('/', (req, res) => {
+  const id = req.body.id
+  console.log(id)
+  knex('templates')
+    .where('id', id)
+    .del()
+    .then(res.end())
 })
 
 module.exports = router;
